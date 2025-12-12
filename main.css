@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header, footer, main, nav {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #222;
+    
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+p {
+    font-size: 1.7rem;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-width: 1000px;
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.1rem;
+}
+
+table th,
+table td {
+    padding: 15px 20px;
+    border: 2px solid #000000;
+    text-align: center;
+}
+
+table thead {
+    background-color: #f8f9fa;
+}
+
+table thead th {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 18px 20px;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff9900;
+}
+
+nav a {
+    margin-right: 25px;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+nav a:last-child {
+    margin-right: 0;
+}
+
+header {
+    padding: 30px 50px;
+    background-color: white;
+    border-bottom: none;
+}
+
+main {
+    padding: 0 40px;
+}
+
+section {
+    margin-bottom: 13px;
+    padding: 10px;
+    background-color: white;
+}
+
+ul {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+    line-height: 0.9;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 30px 40px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+footer p {
+    font-size: 1.2rem;
+}
+
+footer a:hover {
+    color: #74c0fc;
+}

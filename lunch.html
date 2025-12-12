@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Construct - Собрать ланч</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="lunch.css">
+</head>
+<body>
+    <header>
+        <h1>Food Construct</h1>
+        <nav>
+            <a href="index.html">О нас</a>
+            <a href="lunch.html" id="active">Собрать ланч</a>
+            <a href="#">Заказы</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Супы -->
+        <section class="menu-section">
+            <h2>Выберите суп</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-category="soup" data-kind="all">Все</button>
+                <button class="filter-btn" data-category="soup" data-kind="fish">рыбный</button>
+                <button class="filter-btn" data-category="soup" data-kind="meat">мясной</button>
+                <button class="filter-btn" data-category="soup" data-kind="veg">вегетарианский</button>
+            </div>
+            <div class="dishes-grid"></div>
+        </section>
+
+        <!-- Главные блюда -->
+        <section class="menu-section">
+            <h2>Выберите главное блюдо</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-category="main" data-kind="all">Все</button>
+                <button class="filter-btn" data-category="main" data-kind="fish">рыбное</button>
+                <button class="filter-btn" data-category="main" data-kind="meat">мясное</button>
+                <button class="filter-btn" data-category="main" data-kind="veg">вегетарианское</button>
+            </div>
+            <div class="dishes-grid"></div>
+        </section>
+
+        <!-- Салаты и стартеры -->
+        <section class="menu-section">
+            <h2>Выберите салат или стартер</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-category="salad_starter" data-kind="all">Все</button>
+                <button class="filter-btn" data-category="salad_starter" data-kind="fish">рыбный</button>
+                <button class="filter-btn" data-category="salad_starter" data-kind="meat">мясной</button>
+                <button class="filter-btn" data-category="salad_starter" data-kind="veg">вегетарианский</button>
+            </div>
+            <div class="dishes-grid"></div>
+        </section>
+
+        <!-- Напитки -->
+        <section class="menu-section">
+            <h2>Выберите напиток</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-category="drink" data-kind="all">Все</button>
+                <button class="filter-btn" data-category="drink" data-kind="cold">холодный</button>
+                <button class="filter-btn" data-category="drink" data-kind="hot">горячий</button>
+            </div>
+            <div class="dishes-grid"></div>
+        </section>
+
+        <!-- Десерты -->
+        <section class="menu-section">
+            <h2>Выберите десерт</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-category="dessert" data-kind="all">Все</button>
+                <button class="filter-btn" data-category="dessert" data-kind="small">маленькая порция</button>
+                <button class="filter-btn" data-category="dessert" data-kind="medium">средняя порция</button>
+                <button class="filter-btn" data-category="dessert" data-kind="large">большая порция</button>
+            </div>
+            <div class="dishes-grid"></div>
+        </section>
+    </main>
+
+    <section class="order-form-section">
+        <h2>Сделать заказ</h2>
+        <form action="https://httpbin.org/post" method="POST">
+            <div class="form-columns">
+                <div class="order-column">
+                    <h3>Ваш заказ</h3>
+                    
+                    <div class="order-summary">
+                        <p class="no-selection">Ничего не выбрано</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments">Комментарии к заказу</label>
+                        <textarea id="comments" name="comments" rows="4" placeholder="Ваши пожелания к заказу..."></textarea>
+                    </div>
+                </div>
+
+                <div class="customer-column">
+                    <h3>Ваши данные</h3>
+
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                        <label for="newsletter">Получать информацию о скидках и акциях</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Номер телефона</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Адрес доставки</label>
+                        <input type="text" id="address" name="address" required>
+                        <p class="note">Доставка осуществляется только по Москве</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Время доставки:</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="asap" name="delivery_time" value="asap" checked required>
+                                <label for="asap">Как можно скорее</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="specific_time" name="delivery_time" value="specific_time">
+                                <label for="specific_time">К указанному времени</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="time-selector" style="display: none;">
+                        <label for="delivery_time_input">Укажите время доставки</label>
+                        <input type="time"
+                               id="delivery_time_input"
+                               name="delivery_time_input"
+                               min="07:00"
+                               max="23:00"
+                               step="300">
+                        <p class="note">Доступное время доставки с 7:00 до 23:00</p>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="reset" class="reset-btn">Сбросить</button>
+                        <button type="submit" class="submit-btn">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <footer id="contacts">
+        <p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
+    </footer>
+
+    <script src="dishes.js"></script>
+    <script src="displayDishes.js"></script>
+    <script src="orderManager.js"></script>
+    <script src="filters.js"></script>
+    
+    <script>
+        // Обработчик для переключателей времени доставки
+        document.getElementById('asap').addEventListener('change', function() {
+            document.getElementById('time-selector').style.display = 'none';
+        });
+        
+        document.getElementById('specific_time').addEventListener('change', function() {
+            document.getElementById('time-selector').style.display = 'block';
+        });
+    </script>
+    <script>
+        // Обработчик для переключателей времени доставки
+        document.getElementById('asap').addEventListener('change', function() {
+            document.getElementById('time-selector').style.display = 'none';
+        });
+
+        document.getElementById('specific_time').addEventListener('change', function() {
+            document.getElementById('time-selector').style.display = 'block';
+        });
+
+        // Маска для телефона
+        const phoneInput = document.getElementById("phone");
+        phoneInput.addEventListener("input", function () {
+            let value = this.value.replace(/\D/g, "");
+            if (value.startsWith("8")) value = "7" + value.slice(1);
+            let formatted = "+7";
+            if (value.length > 1) formatted += " (" + value.substring(1, 4);
+            if (value.length >= 5) formatted += ") " + value.substring(4, 7);
+            if (value.length >= 8) formatted += "-" + value.substring(7, 9);
+            if (value.length >= 10) formatted += "-" + value.substring(9, 11);
+            this.value = formatted;
+        });
+    </script>
+
+</body>
+</html>
